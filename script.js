@@ -25,7 +25,6 @@ function getData () {
 }
 
 function displayData (response) {
-    // console.log(response);
     if (response.cod === "404") {
         const error = document.querySelector(".error");
         error.textContent = "Please enter a valid city";
@@ -53,19 +52,11 @@ function displayData (response) {
         const humidity = document.querySelector(".humidity");
         humidity.innerHTML = `Humidity: ${response.main.humidity}%`;
 
-        // const wind = document.querySelector(".wind");
-        // wind.innerHTML = `Wind speed: $(response.main.wind)km/hr`;
-
-
         const weatherIcon = document.querySelector(".weather-icon");
         const iconURL = "http://openweathermap.org/img/w/";
         weatherIcon.src = iconURL + response.weather[0].icon + ".png";
 
         search.value = "";
-
-        // if(weatherType.textContent == 'Haze'){
-        //     document.body.style.backgroundImage = "https://unsplash.com/photos/xtgONQzGgOE";
-        // }
 
     }
 }
