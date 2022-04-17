@@ -32,10 +32,10 @@ body {
     flex-direction: column;
    
     width: 100%;
-    max-width: 480px;
+    max-width: 450px;
     height: 90vh;
    
-    background: url(./images/sky.jpg) no-repeat center;
+    background: url(./images/sky3.gif) no-repeat center;
     background-size: cover;
     border-radius: 50px;
     overflow: hidden;
@@ -71,7 +71,8 @@ body {
 }
 
 .top h1 {
-    color: white;
+    color: rgb(227, 232, 255);
+    text-shadow: 2px 2px 2px rgb(50, 56, 75);
     line-height: 2;
 }
 
@@ -107,7 +108,7 @@ body {
 .top button {
    
     width: 30%;
-    background-color: #83a4ff;
+    background-color: #8364ff;
     color: white;
     font-size: 14px;
     font-weight: bold;

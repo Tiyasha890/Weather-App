@@ -1,5 +1,5 @@
 const api = {
-    key: "28fd15358cdecbc1a1dfef367e71acef",
+    key: "a26981702fe5da2ed4fb95c43d48cb55",
     base: "https://api.openweathermap.org/data/2.5/"
 }
 
@@ -32,6 +32,9 @@ function displayData (response) {
      
 
     } else {
+        console.log(response);
+        const error = document.querySelector(".error");
+        error.textContent = "";
         const city = document.querySelector(".city");
         city.innerText = `${response.name}, ${response.sys.country}`;
 
@@ -43,6 +46,7 @@ function displayData (response) {
         temp.innerHTML = ` ${Math.round(response.main.temp)} <sup>°C</sup>`;
 
         const weather = document.querySelector(".weather");
+        const weather_text = response.weather[0].main;
         weather.innerText = `Weather: ${response.weather[0].main}`;
 
         const tempRange = document.querySelector(".temp-range");
@@ -57,6 +61,38 @@ function displayData (response) {
         weatherIcon.src = iconURL + response.weather[0].icon + ".png";
 
         search.value = "";
+
+        main_container = document.querySelector(".main-container");
+        console.log(weather_text)
+
+    if(weather_text == 'Clear') {
+        main_container.style.backgroundImage = "url(images/clear.gif)";
+        
+    } else if(weather_text == 'Haze') {
+        main_container.style.backgroundImage = "url(images/haze.gif)";
+       
+
+
+    } else if(weather_text == 'Clouds') { 
+        main_container.style.backgroundImage = "url(images/cloudy.gif)";
+        
+    } else if(weather_text == 'Sunny') {
+
+        main_container.style.backgroundImage = "url(images/clear.gif)";
+        
+    }     else if(weather_text == 'Rain') {
+        
+        main_container.style.backgroundImage = "url(images/rain3.gif)";
+        
+    } else if(weather_text == 'Snow') {
+        
+        main_container.style.backgroundImage = "url(images/snow.gif)";
+    
+    } else if(weather_text == 'Thunderstorm') {
+    
+        main_container.style.backgroundImage = "url('mages/thunderstorm.gif)";
+        
+    } 
 
     }
 }
